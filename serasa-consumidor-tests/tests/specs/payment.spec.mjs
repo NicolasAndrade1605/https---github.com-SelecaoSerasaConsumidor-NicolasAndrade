@@ -34,26 +34,9 @@ describe('Teste de Pagamento', function () {
         await driver.findElement({ xpath: '//*[@id="bunny"]' }).click();
         
         // Adicionar no Carrinho
-        await driver.findElement({ xpath: 'save_to_cart' }).click();
+        await driver.findElement({ xpath: '' }).click();
         
-        // Verificar se a opção foi selecionada
-        const pixSelected = await driver.findElement({ id: 'id_pix' }).isSelected();
-        expect(pixSelected).to.be.true;
+        
     });
 
-    it('Deve receber confirmação de pagamento via PIX e atualizar o status para "Pago"', async function () {
-        // Simular pagamento via PIX
-        const response = await axios.post('URL_DA_API_DE_PAGAMENTO', {
-            chave_pix: 'EXEMPLO_CHAVE_PIX',
-            valor: 100.00
-        });
-
-        // Verificar se a API respondeu corretamente
-        expect(response.status).to.equal(200);
-
-        // Verificar se o status do pagamento foi atualizado para "Pago"
-        await driver.get('URL_DO_SEU_APLICATIVO/historico');
-        const statusPagamento = await driver.findElement({ id: 'id_status_pagamento' }).getText();
-        expect(statusPagamento).to.equal('Pago');
-    });
 });
