@@ -67,7 +67,7 @@ describe('Teste de Pagamento', function () {
 
         // Fazer cadastro
         await driver.findElement({ xpath: '//*[@id="formCover"]/div[1]/div[1]/sec-view[1]/div/input'}).sendKeys(randomName, randomPassword); //Username
-        await driver.findElement({ xpath: '//*[@id="formCover"]/div[1]/div[1]/sec-view[2]/div/input'}).sendKeys("nicolastest@tuamaeaquelaursa.com"); //Email
+        await driver.findElement({ xpath: '//*[@id="formCover"]/div[1]/div[1]/sec-view[2]/div/input'}).sendKeys("nicolastest@nicolastest.com"); //Email
         await driver.findElement({ xpath: '//*[@id="formCover"]/div[1]/div[2]/sec-view[1]/div/input'}).sendKeys("123Senha"); // Password
         await driver.findElement({ xpath: '//*[@id="formCover"]/div[1]/div[2]/sec-view[2]/div/input'}).sendKeys("123Senha"); 
         
